@@ -11,7 +11,7 @@ export const AppContextProvider = (props) => {
   let idArray = [];
 
   const toggleFavouritesHandler = (movieId) => {
-    if (localStorage.getItem("favourites" === null)) {
+    if (localStorage.getItem("favourites") === null) {
       localStorage.setItem("favourites", movieId);
       setFavourites(movieId);
     } else if (
@@ -52,6 +52,7 @@ export const AppContextProvider = (props) => {
     } else if (localStorage.getItem("favourites") === null) {
       localStorage.setItem("favourites", 0);
     }
+    console.log(localStorage.getItem("favourites"));
   }, []);
 
   const contextValue = {
